@@ -4,20 +4,18 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name = "coupons")
+@Table(name = "roles")
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
-public class Coupon {
+public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Column(name = "code", nullable = false, unique = true)
-    private String code;
-
-    @Column(name = "active", nullable = false)
-    private boolean active;
+    @Column(name = "name", nullable = false)
+    private String name;
+    public static String ADMIN = "ADMIN";
+    public static String USER = "USER";
 }
